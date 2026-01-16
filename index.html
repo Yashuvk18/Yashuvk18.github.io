@@ -2,106 +2,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yashavanth U | Associate Data Scientist</title>
+  <title>Netflix-Style Portfolio | Yashavanth U</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #f4f6f8; color: #333; }
-    header { background: #0f172a; color: #fff; padding: 40px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.5rem; }
-    header p { margin-top: 10px; font-size: 1.1rem; }
-    nav { background: #020617; padding: 10px; text-align: center; }
-    nav a { color: #e5e7eb; margin: 0 15px; text-decoration: none; font-weight: 500; }
-    nav a:hover { color: #38bdf8; }
-    section { max-width: 1000px; margin: auto; padding: 40px 20px; }
-    h2 { border-bottom: 2px solid #38bdf8; display: inline-block; padding-bottom: 5px; }
-    .card { background: #fff; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-    ul { padding-left: 20px; }
-    footer { background: #020617; color: #cbd5f5; text-align: center; padding: 20px; }
-    .links a { color: #38bdf8; margin: 0 10px; text-decoration: none; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #141414;
+      color: #ffffff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      color: #e50914;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    nav a {
+      margin-left: 20px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .hero {
+      height: 100vh;
+      background: linear-gradient(to top, rgba(20,20,20,1), rgba(20,20,20,0.3)),
+                  url('https://images.unsplash.com/photo-1531297484001-80022131f5a1');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 0 60px;
+    }
+    .hero-content {
+      max-width: 600px;
+    }
+    .hero-content h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 25px;
+    }
+    .hero-content button {
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #e50914;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    section {
+      padding: 40px;
+    }
+    section h3 {
+      margin-bottom: 15px;
+    }
+    .row {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+    }
+    .card {
+      min-width: 220px;
+      height: 140px;
+      background: #222;
+      border-radius: 6px;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.1);
+      background: #333;
+    }
+    footer {
+      padding: 30px;
+      text-align: center;
+      color: #999;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body><header>
-  <h1>Yashavanth U</h1>
-  <p>Associate Data Scientist | Machine Learning | Cloud Computing</p>
-  <div class="links">
-    <a href="mailto:yashuvk518@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/yashuvk" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Yashuvk18" target="_blank">GitHub</a>
-  </div>
-</header><nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#education">Education</a>
-  <a href="#certifications">Certifications</a>
-</nav><section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      Aspiring Data Scientist with a strong foundation in Python, Machine Learning, and Cloud Computing.
-      Experienced in building end-to-end AI solutions such as Retrieval-Augmented Generation pipelines
-      and deep learning models for medical imaging. Certified in Microsoft Azure and passionate about
-      solving complex, real-world data problems.
-    </p>
-  </div>
-</section><section id="skills">
-  <h2>Technical Skills</h2>
-  <div class="card">
-    <ul>
-      <li><strong>Languages:</strong> Python, R, SQL, C</li>
-      <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy, Llama 3.2, OpenAI Whisper</li>
-      <li><strong>Cloud & Big Data:</strong> Apache Spark, AWS SageMaker, Microsoft Azure</li>
-      <li><strong>Web & Tools:</strong> Flask, Docker, Ollama, Git, GitHub, VS Code</li>
-    </ul>
+  <h1>NETFLIX</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header><section class="hero">
+  <div class="hero-content">
+    <h2>Yashavanth U</h2>
+    <p>Associate Data Scientist building intelligent systems using Machine Learning, Deep Learning, and Cloud technologies.</p>
+    <button>View Projects</button>
   </div>
 </section><section id="projects">
-  <h2>Projects</h2>  <div class="card">
-    <h3>Local RAG Pipeline for Video Course Support</h3>
-    <ul>
-      <li>Designed a Retrieval-Augmented Generation pipeline acting as an automated teaching assistant.</li>
-      <li>Used OpenAI Whisper (large-v2) to transcribe video content into structured text.</li>
-      <li>Implemented semantic search using cosine similarity with Scikit-learn.</li>
-      <li>Integrated Llama 3.2 via Ollama for context-aware responses with timestamp references.</li>
-    </ul>
-  </div>  <div class="card">
-    <h3>Cross-Domain Diabetic Retinopathy Detection (DANN)</h3>
-    <ul>
-      <li>Developed a Domain-Adversarial Neural Network to handle domain shift in medical images.</li>
-      <li>Trained on APTOS dataset and evaluated on IDRiD dataset.</li>
-      <li>Achieved 84.56% test accuracy with improved generalization.</li>
-    </ul>
-  </div>  <div class="card">
-    <h3>Exploratory Data Analysis on Netflix Content Strategy</h3>
-    <ul>
-      <li>Analyzed Netflix content trends and genre popularity.</li>
-      <li>Performed data cleaning and preprocessing using Pandas.</li>
-      <li>Built visualizations with Seaborn and Matplotlib to uncover key insights.</li>
-    </ul>
+  <h3>Featured Projects</h3>
+  <div class="row">
+    <div class="card">Local RAG Pipeline</div>
+    <div class="card">Diabetic Retinopathy DANN</div>
+    <div class="card">Netflix EDA</div>
+    <div class="card">Azure ML Projects</div>
   </div>
-</section><section id="education">
-  <h2>Education</h2>
-  <div class="card">
-    <p><strong>B.Tech in Computer Science and Engineering</strong><br>
-    Alliance University, Bengaluru<br>
-    CGPA: 7.6 / 10 (Expected 2026)</p><p><strong>Class XII / PUC</strong><br>
-Nagarjuna Pre-University College, Bengaluru<br>
-Percentage: 89.75%</p>
-
-<p><strong>Class X / SSLC</strong><br>
-Deeksha Vidya Mandir, Bengaluru<br>
-Percentage: 86.78%</p>
-
+</section><section id="skills">
+  <h3>Skills</h3>
+  <div class="row">
+    <div class="card">Python</div>
+    <div class="card">Machine Learning</div>
+    <div class="card">TensorFlow</div>
+    <div class="card">Azure & AWS</div>
+    <div class="card">Docker</div>
   </div>
-</section><section id="certifications">
-  <h2>Certifications & Activities</h2>
-  <div class="card">
-    <ul>
-      <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
-      <li>NPTEL Certifications: Compiler Design; Strategic Communication for Sustainable Development</li>
-      <li>Hackathon Participant – Alliance University Annual Hackathon</li>
-      <li>District Level Athlete – Cricket and Volleyball; Member, Badminton Club</li>
-    </ul>
-  </div>
-</section><footer>
-  <p>© 2026 Yashavanth U | Bengaluru, Karnataka</p>
+</section><footer id="contact">
+  <p>© 2026 Yashavanth U | Portfolio inspired by Netflix UI</p>
 </footer></body>
 </html>
