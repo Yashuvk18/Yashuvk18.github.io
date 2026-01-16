@@ -1,152 +1,196 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YASHAVANTH U | Netflix-Style Portfolio</title>
+  <title>Yashavanth U | Associate Data Scientist</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #141414;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #0f172a;
       color: #ffffff;
-      overflow-x: hidden;
-    }/* PROFILE SELECT */
-.profiles {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.profiles h1 { margin-bottom: 40px; font-size: 42px; }
-.profile-list { display: flex; gap: 40px; }
-.profile {
-  width: 140px;
-  height: 140px;
-  background: #333;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.3s, border 0.3s;
-}
-.profile:hover { transform: scale(1.1); border: 3px solid #fff; }
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-/* MAIN APP */
-.app { display: none; }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
 
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-  z-index: 1000;
-}
-header h2 { color: #e50914; }
-nav a { margin-left: 20px; color: #fff; text-decoration: none; font-size: 14px; }
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
 
-.hero {
-  height: 100vh;
-  background: linear-gradient(to top, #141414, rgba(0,0,0,0.4)),
-  url('https://images.unsplash.com/photo-1518770660439-4636190af475');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 0 60px;
-}
-.hero-content { max-width: 600px; }
-.hero-content h1 { font-size: 56px; margin-bottom: 20px; }
-.hero-content p { font-size: 18px; margin-bottom: 25px; }
-.hero-content button {
-  padding: 12px 30px;
-  margin-right: 10px;
-  background: #e50914;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
+    nav {
+      background-color: #020617;
+      padding: 10px;
+      text-align: center;
+    }
 
-section { padding: 40px; }
-h3 { margin-bottom: 15px; }
+    nav a {
+      color: #e5e7eb;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-.row { display: flex; gap: 15px; overflow-x: auto; }
-.card {
-  min-width: 240px;
-  height: 140px;
-  background: #222;
-  border-radius: 6px;
-  padding: 15px;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-.card:hover { transform: scale(1.2); background: #333; z-index: 10; }
+    nav a:hover {
+      color: #38bdf8;
+    }
 
-footer { padding: 40px; text-align: center; color: #999; }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
+    h2 {
+      border-bottom: 2px solid #38bdf8;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      background-color: #020617;
+      color: #cbd5f5;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .links a {
+      color: #38bdf8;
+      margin: 0 10px;
+      text-decoration: none;
+    }
   </style>
 </head>
-<body><!-- PROFILE SCREEN --><div class="profiles" id="profiles">
-  <h1>Who's watching?</h1>
-  <div class="profile-list">
-    <div class="profile" onclick="enterApp()">Data Scientist</div>
-    <div class="profile" onclick="enterApp()">ML Engineer</div>
-    <div class="profile" onclick="enterApp()">Cloud Engineer</div>
+
+<body>
+
+<header>
+  <h1>Yashavanth U</h1>
+  <p>Associate Data Scientist | Machine Learning | Cloud Computing</p>
+
+  <div class="links">
+    <a href="mailto:yashuvk518@gmail.com">Email</a>
+    <a href="https://linkedin.com/in/yashuvk" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Yashuvk18" target="_blank">GitHub</a>
   </div>
-</div><!-- MAIN APP --><div class="app" id="app">
-  <header>
-    <h2>YASHAVANTH U</h2>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#certs">Certifications</a>
-    </nav>
-  </header>  <section class="hero">
-    <div class="hero-content">
-      <h1>Yashavanth U</h1>
-      <p>Associate Data Scientist building intelligent systems using Machine Learning, Deep Learning, and Cloud platforms.</p>
-      <button>View Projects</button>
-      <button>About Me</button>
-    </div>
-  </section>  <section id="projects">
-    <h3>Featured Projects</h3>
-    <div class="row">
-      <div class="card">Local RAG Pipeline</div>
-      <div class="card">Diabetic Retinopathy DANN</div>
-      <div class="card">Netflix Content EDA</div>
-    </div>
-  </section>  <section id="skills">
-    <h3>Skills</h3>
-    <div class="row">
-      <div class="card">Python</div>
-      <div class="card">Machine Learning</div>
-      <div class="card">TensorFlow</div>
-      <div class="card">Azure & AWS</div>
-      <div class="card">Docker</div>
-    </div>
-  </section>  <section id="certs">
-    <h3>Certifications & Activities</h3>
-    <div class="row">
-      <div class="card">Azure Fundamentals (AZ-900)</div>
-      <div class="card">NPTEL – Compiler Design</div>
-      <div class="card">Hackathon Participant</div>
-      <div class="card">District Level Sports</div>
-    </div>
-  </section>  <footer>
-    © 2026 Yashavanth U | Netflix-style portfolio
-  </footer>
-</div><script>
-  function enterApp() {
-    document.getElementById('profiles').style.display = 'none';
-    document.getElementById('app').style.display = 'block';
-  }
-</script></body>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#certifications">Certifications</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      Aspiring Data Scientist with a strong foundation in Python, Machine Learning,
+      and Cloud Computing. Experienced in building end-to-end AI solutions including
+      Retrieval-Augmented Generation pipelines and deep learning models for medical imaging.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="card">
+    <ul>
+      <li><strong>Languages:</strong> Python, R, SQL, C</li>
+      <li><strong>Machine Learning:</strong> TensorFlow, Scikit-learn, Pandas, NumPy</li>
+      <li><strong>AI Tools:</strong> Llama 3.2, OpenAI Whisper</li>
+      <li><strong>Cloud & Big Data:</strong> Azure, AWS SageMaker, Apache Spark</li>
+      <li><strong>Tools:</strong> Docker, Git, GitHub, Flask</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>Local RAG Pipeline for Video Course Support</h3>
+    <ul>
+      <li>Built a Retrieval-Augmented Generation system acting as an AI teaching assistant.</li>
+      <li>Used OpenAI Whisper for video transcription.</li>
+      <li>Implemented semantic search using cosine similarity.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Cross-Domain Diabetic Retinopathy Detection</h3>
+    <ul>
+      <li>Developed a Domain-Adversarial Neural Network (DANN).</li>
+      <li>Trained on APTOS dataset and tested on IDRiD.</li>
+      <li>Achieved 84.56% accuracy.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Netflix Content Strategy – EDA</h3>
+    <ul>
+      <li>Performed data cleaning and exploratory analysis.</li>
+      <li>Identified trends using Pandas and Seaborn.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="card">
+    <p><strong>B.Tech – Computer Science & Engineering</strong><br>
+      Alliance University, Bengaluru<br>
+      CGPA: 7.6 / 10 (Expected 2026)</p>
+
+    <p><strong>Class XII</strong><br>
+      Nagarjuna PU College – 89.75%</p>
+
+    <p><strong>Class X</strong><br>
+      Deeksha Vidya Mandir – 86.78%</p>
+  </div>
+</section>
+
+<section id="certifications">
+  <h2>Certifications & Activities</h2>
+  <div class="card">
+    <ul>
+      <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+      <li>NPTEL – Compiler Design</li>
+      <li>Hackathon Participant – Alliance University</li>
+      <li>District Level Athlete – Cricket & Volleyball</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  © 2026 Yashavanth U | Portfolio Website
+</footer>
+
+</body>
 </html>
