@@ -2,130 +2,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Netflix-Style Portfolio | Yashavanth U</title>
+  <title>YASHAVANTH U | Netflix-Style Portfolio</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: Arial, Helvetica, sans-serif;
       background-color: #141414;
       color: #ffffff;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0));
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      color: #e50914;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    nav a {
-      margin-left: 20px;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .hero {
-      height: 100vh;
-      background: linear-gradient(to top, rgba(20,20,20,1), rgba(20,20,20,0.3)),
-                  url('https://images.unsplash.com/photo-1531297484001-80022131f5a1');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      padding: 0 60px;
-    }
-    .hero-content {
-      max-width: 600px;
-    }
-    .hero-content h2 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    .hero-content p {
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
-    .hero-content button {
-      padding: 12px 30px;
-      font-size: 16px;
-      background-color: #e50914;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    section {
-      padding: 40px;
-    }
-    section h3 {
-      margin-bottom: 15px;
-    }
-    .row {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-    }
-    .card {
-      min-width: 220px;
-      height: 140px;
-      background: #222;
-      border-radius: 6px;
-      padding: 15px;
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: scale(1.1);
-      background: #333;
-    }
-    footer {
-      padding: 30px;
-      text-align: center;
-      color: #999;
-      font-size: 14px;
-    }
+      overflow-x: hidden;
+    }/* PROFILE SELECT */
+.profiles {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.profiles h1 { margin-bottom: 40px; font-size: 42px; }
+.profile-list { display: flex; gap: 40px; }
+.profile {
+  width: 140px;
+  height: 140px;
+  background: #333;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s, border 0.3s;
+}
+.profile:hover { transform: scale(1.1); border: 3px solid #fff; }
+
+/* MAIN APP */
+.app { display: none; }
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  z-index: 1000;
+}
+header h2 { color: #e50914; }
+nav a { margin-left: 20px; color: #fff; text-decoration: none; font-size: 14px; }
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(to top, #141414, rgba(0,0,0,0.4)),
+  url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+}
+.hero-content { max-width: 600px; }
+.hero-content h1 { font-size: 56px; margin-bottom: 20px; }
+.hero-content p { font-size: 18px; margin-bottom: 25px; }
+.hero-content button {
+  padding: 12px 30px;
+  margin-right: 10px;
+  background: #e50914;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+section { padding: 40px; }
+h3 { margin-bottom: 15px; }
+
+.row { display: flex; gap: 15px; overflow-x: auto; }
+.card {
+  min-width: 240px;
+  height: 140px;
+  background: #222;
+  border-radius: 6px;
+  padding: 15px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.card:hover { transform: scale(1.2); background: #333; z-index: 10; }
+
+footer { padding: 40px; text-align: center; color: #999; }
+
   </style>
 </head>
-<body><header>
-  <h1>NETFLIX</h1>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header><section class="hero">
-  <div class="hero-content">
-    <h2>Yashavanth U</h2>
-    <p>Associate Data Scientist building intelligent systems using Machine Learning, Deep Learning, and Cloud technologies.</p>
-    <button>View Projects</button>
+<body><!-- PROFILE SCREEN --><div class="profiles" id="profiles">
+  <h1>Who's watching?</h1>
+  <div class="profile-list">
+    <div class="profile" onclick="enterApp()">Data Scientist</div>
+    <div class="profile" onclick="enterApp()">ML Engineer</div>
+    <div class="profile" onclick="enterApp()">Cloud Engineer</div>
   </div>
-</section><section id="projects">
-  <h3>Featured Projects</h3>
-  <div class="row">
-    <div class="card">Local RAG Pipeline</div>
-    <div class="card">Diabetic Retinopathy DANN</div>
-    <div class="card">Netflix EDA</div>
-    <div class="card">Azure ML Projects</div>
-  </div>
-</section><section id="skills">
-  <h3>Skills</h3>
-  <div class="row">
-    <div class="card">Python</div>
-    <div class="card">Machine Learning</div>
-    <div class="card">TensorFlow</div>
-    <div class="card">Azure & AWS</div>
-    <div class="card">Docker</div>
-  </div>
-</section><footer id="contact">
-  <p>© 2026 Yashavanth U | Portfolio inspired by Netflix UI</p>
-</footer></body>
+</div><!-- MAIN APP --><div class="app" id="app">
+  <header>
+    <h2>YASHAVANTH U</h2>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certifications</a>
+    </nav>
+  </header>  <section class="hero">
+    <div class="hero-content">
+      <h1>Yashavanth U</h1>
+      <p>Associate Data Scientist building intelligent systems using Machine Learning, Deep Learning, and Cloud platforms.</p>
+      <button>View Projects</button>
+      <button>About Me</button>
+    </div>
+  </section>  <section id="projects">
+    <h3>Featured Projects</h3>
+    <div class="row">
+      <div class="card">Local RAG Pipeline</div>
+      <div class="card">Diabetic Retinopathy DANN</div>
+      <div class="card">Netflix Content EDA</div>
+    </div>
+  </section>  <section id="skills">
+    <h3>Skills</h3>
+    <div class="row">
+      <div class="card">Python</div>
+      <div class="card">Machine Learning</div>
+      <div class="card">TensorFlow</div>
+      <div class="card">Azure & AWS</div>
+      <div class="card">Docker</div>
+    </div>
+  </section>  <section id="certs">
+    <h3>Certifications & Activities</h3>
+    <div class="row">
+      <div class="card">Azure Fundamentals (AZ-900)</div>
+      <div class="card">NPTEL – Compiler Design</div>
+      <div class="card">Hackathon Participant</div>
+      <div class="card">District Level Sports</div>
+    </div>
+  </section>  <footer>
+    © 2026 Yashavanth U | Netflix-style portfolio
+  </footer>
+</div><script>
+  function enterApp() {
+    document.getElementById('profiles').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+  }
+</script></body>
 </html>
